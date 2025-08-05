@@ -3,6 +3,7 @@ title: "eds212_day2_activities"
 format: html
 editor: visual
 ---
+load packages
 ```{r}
 library(tidyverse)
 library(palmerpenguins)
@@ -23,5 +24,26 @@ my_derivative
 x <- 1.2
 eval(my_derivative)
 
+```
+
+make penguin plot
+```{r}
+
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(color=species)) +
+  scale_color_manual(values = c("darkred", "orange", "cyan3")) +
+  labs(x = "Bill length (mm)",
+       y = "Bill depth (mm)",
+       title = "Palmer Penguins Bill Measurements")
+```
+
+jitter plot
+```{r}
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_jitter(aes(colour = species)) +
+  labs(x = "Species",
+       y = "Flipper length (mm)",
+       title = "Palmer Penguins Flipper Length by Species")
+```
 ```
 
