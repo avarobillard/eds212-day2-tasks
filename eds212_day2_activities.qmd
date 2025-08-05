@@ -3,5 +3,25 @@ title: "eds212_day2_activities"
 format: html
 editor: visual
 ---
+```{r}
 library(tidyverse)
 library(palmerpenguins)
+```
+
+find derivatives
+```{r}
+
+my_derivative <- D(expr = expression(x^2), name = "x")
+my_derivative
+
+x <- 3
+eval(my_derivative)
+
+my_derivative <- D(expr = expression(2*(3*x+2)^4-5), name = "x")
+my_derivative
+
+x <- 1.2
+eval(my_derivative)
+
+```
+
